@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/start_screen.dart';
-import 'package:myapp/question_screen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -8,11 +7,12 @@ void main() {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.purple, Colors.deepPurple],
+            colors: [Colors.red, Colors.blue],
           ),
         ),
         child: const StartScreen()
       ),
     ),
-  ));
+  ),
+  );
 }

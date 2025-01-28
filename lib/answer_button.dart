@@ -1,21 +1,37 @@
 import 'package:flutter/material.dart';
 
-class AnswerButton extends StatelessWidget {
-  const AnswerButton(this.answerOption,{super.key});
+class AnwerButton extends StatelessWidget {
+  const AnwerButton({
+    super.key,
+    required this.answer,
+    required this.onTap,
+  });
 
-  final String answerOption;
-
+  final String answer;
+  final void Function() onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5), // Add margin here
-      child: ElevatedButton(
-        onPressed: () {},
-      style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.blue,
-          foregroundColor: Colors.white,
-        ),
-        child: Text(answerOption),
+    return Center(
+      child: Column(
+        children: [
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: onTap,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 103, 192, 240),
+                foregroundColor: Colors.white,
+              ),
+                child: Text(answer,
+                  style: const TextStyle(
+                  color: Colors.white, fontSize: 15),
+                  textAlign: TextAlign.center,),
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+        ],
       ),
     );
   }
